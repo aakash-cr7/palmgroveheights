@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extrahead %}
+<style type="text/css">
+    body {
+        background: #ddd;
+        font-size: 15px;
+    }
+    .login-form {
+        border: 1px solid #eee;
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 3px;
+    }
+    .ui.comments {
+        background: #fff;
+        padding: 10px;
+        border-radius: 3px;
+        border: 1px solid #d1d1d1;
+    }
+    .ui.comments .reply.form textarea {
+        font-size: 1em;
+        height: 7em;
+        margin-top: 25px;
+    }
+    .ui.feed>.event>.content .extra.text {
+        max-width: initial;
+    }
+</style>
+{% endblock %}
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
+{% block content %}
+<div class="ui two column centered grid">
+    <div class="eleven wide column">
+        
+        <div class="ui comments">
+            <h3 class="ui dividing header">Comments</h3>
+            <div class="comment">
+                <a class="avatar">
+                    <img src="/images/avatar/small/matt.jpg">
+                </a>
+                <div class="content">
+                    <a class="author">Matt</a>
+                    <div class="metadata">
+                        <span class="date">Today at 5:42PM</span>
+                    </div>
+                    <div class="text">
+                        How artistic!
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment">
+                <a class="avatar">
+                    <img src="/images/avatar/small/elliot.jpg">
+                </a>
+                <div class="content">
+                    <a class="author">Elliot Fu</a>
+                    <div class="metadata">
+                        <span class="date">Yesterday at 12:30AM</span>
+                    </div>
+                    <div class="text">
+                        <p>This has been very useful for my research. Thanks as well!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="comment">
+                <a class="avatar">
+                    <img src="/images/avatar/small/joe.jpg">
+                </a>
+                <div class="content">
+                    <a class="author">Joe Henderson</a>
+                    <div class="metadata">
+                        <span class="date">5 days ago</span>
+                    </div>
+                    <div class="text">
+                        Dude, this is awesome. Thanks so much
+                    </div>
+                </div>
+            </div>
+            <form class="ui reply form">
+                <div class="field">
+                    <textarea></textarea>
+                </div>
+                <div class="ui blue labeled submit icon button">
+                    <i class="icon edit"></i> Add Coment
+                </div>
+            </form>
+        </div> <!-- ./Comments -->
+    </div> <!-- ./Column -->
+
+</div>
+{% endblock %}

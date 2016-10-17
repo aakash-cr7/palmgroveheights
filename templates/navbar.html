@@ -1,0 +1,23 @@
+<div class="ui large borderless menu">
+    <a class="item" href="{% url 'home' %}">
+        Home
+    </a>
+    <a class="item" href="{% url 'discussions' %}">
+        Discussion
+    </a>
+    <a class="item" href="{% url 'notices' %}">
+        Notices
+    </a>
+
+    <div class="right menu">
+        <a class="item">
+            <img class="ui avatar circular image" src="/images/wireframe/square-image.png">
+            <span>{{ request.user.email }}</span>
+        </a>
+        <div class="item">
+            {% if request.user.is_authenticated %}
+            <a class="ui teal button" href="{% url 'logout' %}">Log out</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

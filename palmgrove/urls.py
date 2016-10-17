@@ -16,7 +16,14 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-
+from account import views as account_views
+from . import views as palmgrove_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', account_views.index),
+    url(r'^register/$', account_views.signup, name='register'),
+    url(r'^home/$', account_views.home, name='home'),
+    url(r'^logout/$', account_views.logout, name='logout'),
+    url(r'^discussions/$', palmgrove_views.discussions, name='discussions'),
+    url(r'^notices/$', palmgrove_views.notices, name='notices'),
 ]

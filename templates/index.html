@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extrahead %}
+<style type="text/css">
+    body {
+        background: #ddd;
+        font-size: 15px;
+    }
+    .login-form {
+        border: 1px solid #eee;
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 3px;
+    }
+    .ui.form .error.message {
+        display: block;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="ui large header centered">Welcome to Palmgrove Heights</div>
+<div class="ui two column centered grid">
+    <div class="column">
+        {% if errors %}
+            <div class="ui error message">
+                {% for error in errors %}
+                <ul>
+                    <li>{{ error }}</li>
+                </ul>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form class="ui form" method="POST" action="">
+            {% csrf_token %}
+            <div class="ui stacked segment">
+                <div class="ui medium header">Login</div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        {% if email %}
+                        <input type="email" name="email" value="{{email}}">
+                        {% else %}
+                        <input type="email" name="email" placeholder="E-mail address">
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                </div>
+                <button class="ui teal submit button">Login</button>
+                <br>
+            </div>
+
+            <div class="ui tiny header centered">
+                NOT A MEMBER YET? 
+                <a href="{% url 'register' %}">JOIN NOW</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extrahead %}
+<style type="text/css">
+    body {
+        background: #ddd;
+        font-size: 15px;
+    }
+    .login-form {
+        border: 1px solid #eee;
+        background: #fff;
+        padding: 30px 40px;
+        border-radius: 3px;
+    }
+</style>
+{% endblock %}
+{% block content %}
+<div class="ui large header centered">Welcome to Palmgrove Heights</div>
+<div class="ui two column centered grid">
+    <div class="column">
+        <form class="ui form">
+            <div class="ui stacked segment">
+                <div class="ui medium header">Register</div>
+                <div class="field">
+                    <label>E-mail Address</label>
+                    <div class="ui left icon input">
+                        <i class="user icon"></i>
+                        <input type="text" name="email" placeholder="">
+                    </div>
+                </div>
+                 <div class="field">
+                    <label>First Name</label>
+                    <div class="ui left icon input">
+                        <i class="edit icon"></i>
+                        <input type="text" name="first-name" placeholder="">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <div class="ui left icon input">
+                        <i class="edit icon"></i>
+                        <input type="text" name="last-name" placeholder="">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password" placeholder="">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Re-enter Password</label>
+                    <div class="ui left icon input">
+                        <i class="lock icon"></i>
+                        <input type="password" name="password2">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>10 Digit Mobile Number</label>
+                    <div class="ui left icon input">
+                        <i class="mobile icon"></i>
+                        <input type="text" name="mobile">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Current Address</label>
+                    <div class="ui left icon input">
+                        <i class="home icon"></i>
+                        <input type="text" name="current-address">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Palmgrove Heights Flat Number</label>
+                    <div class="ui left icon input">
+                        <i class="home icon"></i>
+                        <input type="text" name="current-address">
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label>Resident type</label>
+                    <select class="ui fluid dropdown">
+                        <option value="">Owner</option>
+                        <option value="">Tenant</option>
+                        <option value="">Residing</option>
+                        <option value="">Non-residing</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label>Member of owner association?</label>
+                    <select class="ui fluid dropdown">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="ui teal submit button">Register</div>
+                <br>
+                <br>
+                <div class="ui tiny">
+                    ALREADY A MEMBER? <a href="/">LOGIN</a> 
+                </div>
+            </div>
+
+            <div class="ui error message"></div>
+        </form>
+    </div>
+</div>
+{% endblock %}
